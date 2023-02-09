@@ -7,6 +7,7 @@ import random
 requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
 requests.packages.urllib3.disable_warnings()
 
+headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36'} 
 proxies = {"http": "http://127.0.0.1:8080", "https": "http://127.0.0.1:8080"}
 
 
@@ -61,7 +62,6 @@ def doLogin(username, password, url):
     captcha_content = r.get("https://pass.hust.edu.cn/cas/code?"+str(random.random()), stream=True)
     print(login_html.status_code)
     captcha_content.raw.decode_content = True
-    print(login_html.text)
     nonce = re.search(
         '<input type="hidden" id="lt" name="lt" value="(.*)" />', login_html.text
     ).group(1)
