@@ -23,6 +23,7 @@ jobs:
 
       - name: Install tesseract-ocr  
         run: |
+          sudo apt-get update
           sudo apt-get install tesseract-ocr  
       #- name: Install Chrome
       #  run: |
