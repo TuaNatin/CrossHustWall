@@ -59,7 +59,7 @@ def doLogin(username, password, url):
     r = requests.session()
     login_html = r.get(url)
     captcha_content = r.get("https://pass.hust.edu.cn/cas/code?"+str(random.random()), stream=True)
-    print(response.status_code)
+    print(login_html.status_code)
     captcha_content.raw.decode_content = True
     print(login_html.text)
     nonce = re.search(
