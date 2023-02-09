@@ -8,7 +8,7 @@ requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ':HIGH:!DH:!aNULL'
 requests.packages.urllib3.disable_warnings()
 
 headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33'}
-proxies = {"http": "http://127.0.0.1:8080", "https": "http://127.0.0.1:8080"}
+proxies = {"http": "http://112.195.240.214:8080", "https": "http://112.195.240.214:8080"}
 
 
 def ext_data_with_0(data):
